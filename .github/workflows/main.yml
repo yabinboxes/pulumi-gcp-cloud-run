@@ -27,7 +27,6 @@ jobs:
       - name: 'Pulumi Auth'
         uses: pulumi/actions@v3
         with:
-          command: preview
           stack-name: dev
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_SECRETS }}
