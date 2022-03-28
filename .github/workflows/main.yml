@@ -24,3 +24,10 @@ jobs:
           credentials_json: '${{ secrets.PRISMATIC_FACT_SECRETS }}'
       - name: Test gcloud
         run: gcloud projects list --sort-by=projectId --limit=5
+      - name: 'Pulumi Auth'
+        uses: pulumi/actions@v3
+        with:
+          command: preview
+          stack-name: dev
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_SECRETS }}
