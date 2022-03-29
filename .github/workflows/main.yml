@@ -34,6 +34,7 @@ jobs:
           export PULUMI_ACCESS_TOKEN=${{ secrets.PULUMI_SECRETS }}
           pulumi login
           pulumi config set bucketName my-bucket2 -s dev
+          pulumi up
       #- uses: pulumi/actions@v3
       #  with:
       #    command: up
