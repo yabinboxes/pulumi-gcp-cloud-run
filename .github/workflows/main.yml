@@ -31,6 +31,7 @@ jobs:
       - name: Bucket name
         run: |
           curl -fsSL https://get.pulumi.com | sh
+          pulumi help
           pulumi config set bucketName my-bucket2 -s dev
       - uses: pulumi/actions@v3
         with:
