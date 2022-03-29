@@ -30,7 +30,7 @@ jobs:
           npm install
       - uses: pulumi/actions@v3
         with:
-          command: preview
+          command: up
           stack-name: dev
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_SECRETS }}
