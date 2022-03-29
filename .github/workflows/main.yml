@@ -28,6 +28,7 @@ jobs:
         run: |
           ls
           npm install
+      - run: curl -fsSL https://get.pulumi.com | sh
       - name: Bucket name
         run: pulumi config set bucketName my-bucket2 -s dev
       - uses: pulumi/actions@v3
