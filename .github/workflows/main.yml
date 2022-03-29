@@ -31,11 +31,12 @@ jobs:
       - name: Bucket name
         run: |
           curl -fsSL https://get.pulumi.com | sh
-          pulumi help
+          export PULUMI_ACCESS_TOKEN=${{ secrets.PULUMI_SECRETS }}
+          pulumi login
           pulumi config set bucketName my-bucket2 -s dev
-      - uses: pulumi/actions@v3
-        with:
-          command: up
-          stack-name: dev
-        env:
-          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_SECRETS }}
+      #- uses: pulumi/actions@v3
+      #  with:
+      #    command: up
+      #    stack-name: dev
+      #  env:
+      #    PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_SECRETS }}
