@@ -24,6 +24,10 @@ jobs:
           credentials_json: '${{ secrets.PRISMATIC_FACT_SECRETS }}'
       - name: Test gcloud
         run: gcloud projects list --sort-by=projectId --limit=5
+      - name: install depndencies
+        run: |
+          ls
+          npm install
       - uses: pulumi/actions@v3
         with:
           command: preview
