@@ -28,8 +28,6 @@ jobs:
         run: |
           ls
           npm install
-      - name: Bucket name
-        run: pulumi config set bucketName my-bucket2 -s dev
       - uses: pulumi/actions@v3
         with:
           command: up
